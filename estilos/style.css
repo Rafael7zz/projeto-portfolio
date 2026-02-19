@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+:root{
+    --verde:#00c300;
+    --gray1:#e7e7e7;
+    --gray2: #e1e1e1;
+}
+
+/* Mobile First*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--gray1);
+}
+
+/* HEADER E MENU*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background: var(--verde);
+}
+
+header nav{
+    text-align: right;
+    padding: 5px 3px 5px 0px;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    margin: 4px;
+}
+
+#sol{
+    display: none;
+}
+
+/* MAIN*/
+
+/* Sobre mim*/
+
+main{
+    display: grid;
+}
+
+section{
+    margin: auto;
+    margin-top: 10px;
+    background-color: white;
+    width: 90vw;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+section h1{
+    color: var(--verde);
+    padding: 10px;
+}
+section p{
+    padding: 5px 10px;
+    text-align: left;
+}
+
+img#perfil{
+    padding: 5px;
+    display: flex;
+    margin: auto;
+    width: 200px;
+    border-radius: 50%;
+    border: 0.25em solid var(--verde);
+}
+
+.container{
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+}
+img.social{
+    width: 40px;
+}
+
+
+/* caixas config gerais*/
+div h4{
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+div h2{
+    padding-left: 10px;
+    color: var(--verde);
+}
+div p{
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+div a{
+    padding-left: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Formação*/
+.boxforma{
+    margin-left: 5px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    width: 85vw;
+    background-color: var(--gray2);
+}
+
+.fundoforma{
+    margin: 10px 5px;
+    background-color: var(--verde);
+    width: 8vw;
+    border-radius: 10px;
+}
+.boxforma:hover{
+    transform: translateX(10px);
+    width: 84vw;
+    transition: 0.6s;
+    cursor: pointer;
+}
+/* Projetos*/
+.boxproje{
+    margin-left: 5px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    width: 85vw;
+    background-color: var(--gray2);
+}
+.boxproje img{
+    display: block;
+    margin: auto;
+    width: 380px;
+    border-radius: 10px;
+}
+.fundoproje{
+    margin: 10px 5px;
+    background-color: var(--verde);
+    width: 8vw;
+    border-radius: 10px;
+}
+.boxproje:hover{
+    transform: translateX(10px);
+    width: 84vw;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+/* */
+
+/* Fim do Mobile First*/
