@@ -10,6 +10,14 @@
     --gray: #8FA1A6;
 }
 
+body.escuro{
+    --destaque: #006aff;
+    --fundoprincipal: #222222;
+    --texto: #e0e0e0;
+    --texto-inverso: #c5c5c5;
+    --destaque-inverso: #588bcc;
+    --fundo-card: #444444;
+}
 /* Mobile First*/
 
 *{
@@ -19,7 +27,6 @@
 }
 
 body{
-    height: 100vh;
     background-color: var(--fundoprincipal);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.5em;
@@ -33,33 +40,30 @@ header{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: fixed;
-    width: 100vw;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 header nav{
     text-align: right;
-    padding: 5px 3px 5px 0px;
+    padding: 5px 13px 5px 0px;
 }
 header ul{
     display: flex;
     list-style-type: none;
     gap: 10px;
 }
-nav a{
+.tooltip a{
     text-decoration: none;
     color: var(--texto-inverso);
     font-weight: 600;
-    padding: 10px 3px 3px 3px;
+    padding: 10px 5px 5px 5px;
     border-radius: 5px;
-}
-nav a:hover{
-    background-color: var(--destaque-inverso);
     transition: 1s;
 }
-
-#sol{
-    display: none;
+.tooltip a:hover{
+    background-color: var(--destaque-inverso);
 }
 
 /* CAIXAS CONFIG GERAIS*/
@@ -68,17 +72,19 @@ article{
     padding: 10px;
     background-color: var(--fundo-card);
     border-radius: 8px;
-    margin: 10px 0px;
+    margin: 20px 0px;
 }
 
 section h1{
     color: var(--destaque);
     padding: 10px;
     font-size: 1.8em;
+    
 }
 section p{
     padding: 5px 10px;
     text-align: left;
+    color: var(--texto);
 }
 
 
@@ -97,6 +103,7 @@ section#apresentacao{
     padding: 5px;
     background-color: var(--fundo-card);
     border-radius: 8px;
+    margin: 10px 0px 0px 0px;
 }
 
 
@@ -104,7 +111,6 @@ img#foto-perfil{
     display: block;
     margin: auto;
     padding: 4px;
-    margin-top: 10px;
     margin-bottom: 10px;
     width: 200px;
     aspect-ratio: 1/1;
@@ -279,12 +285,54 @@ span#nome{
     font-weight: 900;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltiptext {
+  visibility: hidden; /* Hidden by default */
+  width: 130px;
+  background-color: var(--destaque-inverso);
+  color: var(--texto-inverso);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 1; /* Ensure tooltip is displayed above content */
+}
+
+/* Show the tooltip text on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltiptext {
+  top: 40px;
+  left: -95px;
+}
  /* Fim do Mobile First*/
 
 
- /* Tablet */
+ /* telas maiores */
 
 @media (min-width: 768px) {
+    main{
+        grid-template-columns: auto 300px  1fr auto;
+    }
+    section#apresentacao{
+        grid-column: 2 / 3;
+        height: fit-content;
+        position: sticky;
+        top: 65px;
+    }
+    
+    section#talentos{
+        grid-column: 3 / 4;
+
+    }
     #skill-container {
     grid-template-columns: 1fr 1fr;
 }
@@ -294,17 +342,4 @@ span#nome{
 }
 }
 
- /* Desktop */
-
-@media (min-width: 1024px) {
-    body {
-        
-    }
-}
-
- /* TV */
-
-@media (min-width: 1920px) {
-    body {
-    }
-}
+ 
