@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 :root{
-    --destaque:#00c300;
-    --fundoprincipal:#f5f5f5;
+    --destaque:#273640;
+    --fundoprincipal:#ecebeb;
     --texto:#222222;
     --texto-inverso:#ffffff;
-    --destaque-inverso:#006f00;
+    --destaque-inverso:#556A73;
     --fundo-card: #ffffff;
-    --gray: #e1e1e1;
+    --gray: #8FA1A6;
 }
 
 /* Mobile First*/
@@ -33,7 +33,8 @@ header{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    position: fixed;
+    width: 100vw;
 }
 
 header nav{
@@ -61,6 +62,26 @@ nav a:hover{
     display: none;
 }
 
+/* CAIXAS CONFIG GERAIS*/
+
+article{
+    padding: 10px;
+    background-color: var(--fundo-card);
+    border-radius: 8px;
+    margin: 10px 0px;
+}
+
+section h1{
+    color: var(--destaque);
+    padding: 10px;
+    font-size: 1.8em;
+}
+section p{
+    padding: 5px 10px;
+    text-align: left;
+}
+
+
 /* MAIN*/
 
 /* apresentação*/
@@ -70,7 +91,6 @@ main{
     display: grid;
     grid-template-columns: auto 90vw auto;
     gap: 20px;
-    margin-top: 20px;
 }
 section#apresentacao{
     grid-column: 2;
@@ -109,40 +129,127 @@ img#foto-perfil{
     transition: color 0.5s;
 }
 
- /* Sobre mim*/
+ /* Talentos*/
+ 
+ section#talentos{
+     grid-column: 2;
+    }
+    
+    /* skills*/
 
-section#sobre-mim{
-    grid-column: 2;
-    padding: 5px;
-    background-color: var(--fundo-card);
+#skill-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px 5px;
+}
+
+#skill-container .info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#skill-container .nome {
+    font-weight: bold;
+    color: var(--texto);
+}
+
+#skill-container .percent {
+    font-weight: bold;
+    color: var(--destaque);
+}
+
+#skill-container .barra {
+    width: 100%;
+    height: 8px;
+    background-color: var(--gray);
+    border-radius: 4px;
+}
+#skill-container .progresso {
+    height: 8px;
+    background-color: var(--destaque);
+    border-radius: 4px;
+}
+
+
+
+    /* Formação*/
+
+#forma-container{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+
+.curso{
+    background-color: var(--fundoprincipal);
+    border-radius: 8px;
+    border-left: 5px solid var(--destaque-inverso); 
+    padding-left: 15px;
+    transition: border-width 0.6s;
+}
+.curso:hover{
+    border-left-width: 15px; 
+}
+
+h3.instituição{
+    padding-left: 10px;
+    font-size: 1.3em;
+    color: var(--destaque);
+}
+
+
+ /* Projetos*/
+
+#projeto-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.boxproje{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 5px solid var(--destaque-inverso); 
+    background-color: var(--fundoprincipal);
+    padding-left: 15px;
+    transition: border-width 0.6s;
+}
+.boxproje:hover{
+    border-left-width: 15px; 
+}
+
+.proje-info{
+    max-width: 80%;
+}
+
+img.foto{
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    overflow: hidden;
     border-radius: 8px;
 }
 
-
-/* CAIXAS CONFIG GERAIS*/
-
-section h1{
-    color: var(--destaque);
-    padding: 10px;
-    font-size: 1.8em;
-}
-section p{
-    padding: 5px 10px;
-    text-align: left;
-}
-
-div h4{
+h3.titulo{
     padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    color: var(--destaque);
+}
+
+ /* itens da formação e projetos*/
+
+.periodo{
+    font-size: 0.8em;
+    padding-left: 10px;
     font-weight: 600;
     font-size: smaller;
 }
-div h2{
-    padding-left: 10px;
-    color: var(--destaque);
-}
-div p{
+p.titulacao{
     padding-left: 10px;
     padding-bottom: 5px;
 }
@@ -153,73 +260,9 @@ div a{
     color: black;
 }
 
- /* Formação*/
 
-section#forma{
-    grid-column: 2;
-    padding: 5px;
-    background-color: var(--fundo-card);
-    border-radius: 8px;
-}
+ /*Footer*/
 
-.boxforma{
-    margin-left: 5px;
-    padding: 10px 5px;
-    border-radius: 10px;
-    width: 85vw;
-    background-color: var(--gray);
-}
-
-.fundoforma{
-    margin: 10px 5px;
-    background-color: var(--destaque);
-    width: 8vw;
-    border-radius: 10px;
-}
-.boxforma:hover{
-    transform: translateX(10px);
-    width: 84vw;
-    transition: 0.6s;
-    cursor: pointer;
-}
-
- /* Projetos*/
-
-section#proje{
-    grid-column: 2;
-    padding: 5px;
-    background-color: var(--fundo-card);
-    border-radius: 8px;
-}
-
-.boxproje{
-    margin-left: 5px;
-    padding: 10px 5px;
-    border-radius: 10px;
-    width: 85vw;
-    background-color: var(--gray);
-}
-.boxproje img{
-    display: block;
-    margin: auto;
-    width: 300px;
-    border-radius: 10px;
-}
-.fundoproje{
-    margin: 10px 5px;
-    background-color: var(--destaque);
-    width: 8vw;
-    border-radius: 10px;
-}
-.boxproje:hover{
-    transform: translateX(10px);
-    width: 84vw;
-    transition: 0.6s;
-    cursor: pointer;
-}
-
-/* */
-/*Footer*/
 footer{
     background-color: var(--destaque);
     color: var(--texto-inverso);
@@ -235,23 +278,32 @@ footer p{
 span#nome{
     font-weight: 900;
 }
-/* Fim do Mobile First*/
+
+ /* Fim do Mobile First*/
 
 
-/* Tablet */
+ /* Tablet */
+
 @media (min-width: 768px) {
-    body {
-    }
+    #skill-container {
+    grid-template-columns: 1fr 1fr;
+}
+.boxproje{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
 }
 
-/* Desktop */
+ /* Desktop */
+
 @media (min-width: 1024px) {
     body {
         
     }
 }
 
-/* TV */
+ /* TV */
+
 @media (min-width: 1920px) {
     body {
     }
